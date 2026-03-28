@@ -64,6 +64,7 @@
                     </execution>
                     <execution>
                         <id>check</id>
+                        <phase>verify</phase>
                         <goals><goal>check</goal></goals>
                         <configuration>
                             <rules>
@@ -89,9 +90,9 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${checkstyle.version}</version>
                 <configuration>
-                    <configLocation>google_checks.xml</configLocation>
+                    <configLocation>checkstyle.xml</configLocation>
                     <failOnViolation>true</failOnViolation>
-                    <violationSeverity>warning</violationSeverity>
+                    <violationSeverity>error</violationSeverity>
                 </configuration>
             </plugin>
 

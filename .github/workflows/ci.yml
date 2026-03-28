@@ -58,8 +58,8 @@ jobs:
           distribution: temurin
           cache: maven
 
-      - name: Run unit tests with coverage
-        run: mvn test jacoco:report -q
+      - name: Run unit tests with coverage check
+        run: mvn verify -q
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -75,9 +75,6 @@ jobs:
           name: coverage-report
           path: target/site/jacoco/
           retention-days: 7
-
-      - name: Check code coverage threshold (80%)
-        run: mvn jacoco:check -q
 
   # ─────────────────────────────────────────
   # Stage 3: Code Quality
