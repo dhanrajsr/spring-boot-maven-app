@@ -41,6 +41,7 @@ class HelloControllerTest {
         mockMvc.perform(get("/api/version"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.version").value("1.0.0"))
-                .andExpect(jsonPath("$.build").value("maven"));
+                .andExpect(jsonPath("$.build").value("maven"))
+                .andExpect(jsonPath("$.app").value("spring-boot"));
     }
 }
